@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
   
   get '/recipes/:id' do 
     @recipe = Recipe.find_by_id(params[:id])
-    binding.pry if @recipe.name == "Double chocolate chip cookies" || @recipe.name = "Chocolate Chip Cookies"
+    
     erb :show 
   end 
   

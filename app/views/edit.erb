@@ -1,5 +1,6 @@
 <h1>Edit</h1>
 <form action="/recipes/<%= @recipe.id %>" method="POST">
+  <% binding.pry if @recipe.name = "Choclate Chip Cookies" %>
   <input id="hidden" type="hidden" name="_method" value="patch">
   <%= @recipe.name %> <input type="text" name="name">
   <%= @recipe.ingredients %> <input type="text" name="ingredients">

@@ -28,7 +28,6 @@ class ApplicationController < Sinatra::Base
   
   get '/recipes/:id/edit' do 
     @recipe = Recipe.find_by_id(params[:id])
-    binding.pry if @recipe.name == "Chocolate Chip Cookies"
     erb :edit 
   end
   
@@ -40,7 +39,6 @@ class ApplicationController < Sinatra::Base
   
   patch '/recipes/:id' do 
     @recipe = Recipe.find_by_id(params[:id])
-    binding.pry if @recipe.name == "Chocolate Chip Cookies" || @recipe.name == "Double chocolate chip cookies"
     @recipe.name = params[:name]
     @recipe.ingredients = params[:ingredients]
     @recipe.cook_time = params[:cook_time]

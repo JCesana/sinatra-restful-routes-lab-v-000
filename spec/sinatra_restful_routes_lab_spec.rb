@@ -137,11 +137,8 @@ describe "Recipe App" do
     end
 
     it "redirects to the recipe show page" do
-      binding.pry 
       expect(page.current_path).to eq("/recipes/#{@cookie.id}")
-      binding.pry
       expect(page).to have_content("Double chocolate chip cookies")
-      binding.pry 
       expect(page).to have_content("chocolate chips, flour, sugar, butter, cocoa powder")
       expect(page).to have_content("30 minutes")
     end
